@@ -12,7 +12,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useHistory, withRouter } from "react-router-dom";
 
 const useStylesScroll = makeStyles((theme) => ({
   root: {
@@ -75,8 +76,9 @@ const useStylesNav = makeStyles((theme) => ({
     }
 }));
 
-export default function NavBar(props) {
+function NavBar(props) {
     const classes = useStylesNav();
+    let history = useHistory();
     return (
         <React.Fragment>
             <CssBaseline />
@@ -86,10 +88,10 @@ export default function NavBar(props) {
                         <MenuIcon />
                     </IconButton> */}
                     <Link to='/' className={classes.title}>
-                        <Typography variant="h6" className={classes.title}>Gambit</Typography>
+                        <Typography variant="h6" className={classes.title}>CounterGambit</Typography>
                     </Link>
                     <Link to='/analytics' className={classes.link}>
-                        <Button variant="outlined" color="primary" className={classes.item}>
+                        <Button variant="outlined" color="primary" className={classes.item} onClick={()=>{history.push('/analytics')}}>
                             See How We Stack Up
                         </Button>
                     </Link>
@@ -110,4 +112,6 @@ export default function NavBar(props) {
             </ScrollTop>
         </React.Fragment>
     );
-}
+};
+
+export default withRouter(NavBar);

@@ -90,7 +90,7 @@ const generateDataFunc = (data) => (canvas) => {
         labels: data.labels,
         datasets: [
         {
-            label: "My First dataset",
+            label: "Data",
             fill: true,
             backgroundColor: gradientStroke,
             borderColor: "#1f8ef1",

@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -48,8 +48,8 @@ const AnalyticsPage = (props) => {
 function App() {
 	return (
 		<BrowserRouter>
-			<Route path='/' exact component={MainPage}/>
-			<Route path='/analytics' exact component={AnalyticsPage}/>
+			<Route path='/' exact component={withRouter(MainPage)}/>
+			<Route path='/analytics' exact component={withRouter(AnalyticsPage)}/>
 		</BrowserRouter>
 	);
 }

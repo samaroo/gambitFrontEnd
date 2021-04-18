@@ -7,15 +7,15 @@ const MainForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className="mainForm">
             <Field name="input" component="textarea" type="text" className="mainInput"/>
-            <Button size="large" color="primary" variant="contained" onClick={props.submitText(props.form.values ? props.form.values.input : "")}>Analyze</Button>
+            <Button size="large" color="primary" variant="contained" onClick={() => {props.submitText(props.form.values ? props.form.values.input : "")}}>Analyze</Button>
         </form>
     );
 };
 
-const WrappedForm = reduxForm({form: "mainForm"})(MainForm);
-
 const mapStateToProps = (state) => {
     return {form: state.form}
-}
+};
 
-export default connect(mapStateToProps, {submitText})(WrappedForm);
+const ConnectedForm = connect(mapStateToProps, {submitText})(MainForm);
+
+export default reduxForm({form: "mainForm"})(ConnectedForm);
