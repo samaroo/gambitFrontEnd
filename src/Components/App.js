@@ -1,4 +1,5 @@
-import BackgroundPaper from './MainPage/Containers/BackgroundPaper';
+import BackgroundPaperHome from './MainPage/Containers/BackgroundPaper';
+import BackgroundPaperAnalytics from './AnalyticsPage/Containers/BackgroundPaper';
 import NavBar from './NavBar';
 import React from 'react';
 import Container from '@material-ui/core/Container';
@@ -13,7 +14,15 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         justifyContent: "center",
 		flexDirection: "column"
-    }
+    },
+	secondaryContainer: {
+		width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-start",
+		flexDirection: "column"
+	}
 }));
 
 const MainPage = (props) => {
@@ -21,15 +30,17 @@ const MainPage = (props) => {
 	return (
 		<Container className={classes.container}>
 			<NavBar/>
-			<BackgroundPaper/>
+			<BackgroundPaperHome/>
 		</Container>
 	);
 };
 
 const AnalyticsPage = (props) => {
+	const classes = useStyles();
 	return (
-		<Container>
+		<Container className={classes.secondaryContainer}>
 			<NavBar/>
+			<BackgroundPaperAnalytics/>
 		</Container>
 	);
 }

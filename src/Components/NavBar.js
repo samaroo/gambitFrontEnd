@@ -18,7 +18,7 @@ const useStylesScroll = makeStyles((theme) => ({
   root: {
     position: 'fixed',
     bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    right: theme.spacing(2)
   }
 }));
 
@@ -69,6 +69,9 @@ const useStylesNav = makeStyles((theme) => ({
     },
     link: {
         textDecoration: "none"
+    },
+    arrow: {
+      color: "#3F52B5",
     }
 }));
 
@@ -101,8 +104,8 @@ export default function NavBar(props) {
             </AppBar>
             <Toolbar id="back-to-top-anchor" />
             <ScrollTop>
-                <Fab color="secondary" size="small" aria-label="scroll back to top">
-                    <KeyboardArrowUpIcon />
+                <Fab color="primary" size="small" aria-label="scroll back to top">
+                    <KeyboardArrowUpIcon/>
                 </Fab>
             </ScrollTop>
         </React.Fragment>
