@@ -1,0 +1,53 @@
+html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #F5F6FA;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background-color: #F5F6FA;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    background-color: #F5F6FA;
+}
+
+.Typewriter__wrapper, .Typewriter__cursor {
+    font-size: 2em;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.mainForm {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mainInput {
+    height: 80%;
+    width: 80%;
+    margin-bottom: 10%;
+    border: none;
+    border-radius: 20px;
+    padding: 5%;
+    box-shadow: rgba(23, 42, 214, 0.15) 0px 10px 50px;
+    color: #3F52B5;
+    transition: box-shadow 0.5s ease-out;
+}
+
+.mainInput:focus {
+    outline: none;
+    box-shadow: rgba(23, 42, 214, 0.35) 0px 10px 50px;
+    transition: box-shadow 0.5s ease-out;
+}
+
