@@ -11,6 +11,8 @@ import Zoom from '@material-ui/core/Zoom';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 
 const useStylesScroll = makeStyles((theme) => ({
   root: {
@@ -57,11 +59,16 @@ const useStylesNav = makeStyles((theme) => ({
         color: theme.palette.primary.main,
         padding: '1% 10%'
     },
-    leftToolBar: {
-
-    },
     title: {
         flexGrow: 1,
+        textDecoration: "none",
+        color: "#3F52B5"
+    },
+    item: {
+        marginRight: "50px"
+    },
+    link: {
+        textDecoration: "none"
     }
 }));
 
@@ -75,10 +82,17 @@ export default function NavBar(props) {
                     {/* <IconButton edge="start" color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton> */}
-                    <Typography variant="h6" className={classes.title}>Gambit</Typography>
+                    <Link to='/' className={classes.title}>
+                        <Typography variant="h6" className={classes.title}>Gambit</Typography>
+                    </Link>
+                    <Link to='/analytics' className={classes.link}>
+                        <Button variant="outlined" color="primary" className={classes.item}>
+                            See How We Stack Up
+                        </Button>
+                    </Link>
                     <IconButton
                         aria-haspopup="true"
-                        onClick={()=>{}}
+                        onClick={()=>{window.location.href = 'https://github.com/samaroo/gambitFrontEnd';}}
                         color="inherit"
                     >
                         <GitHubIcon/>

@@ -1,11 +1,7 @@
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import AnimatedType from '../AnimatedType';
 import MainForm from '../MainForm';
-import Confidence from '../Confidence';
 import Verdict from '../Verdict';
-import ProgressBar from 'react-animated-progress-bar';
 import { CircularProgressbarWithChildren as Progress, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { connect } from 'react-redux';
@@ -41,11 +37,11 @@ const MainGrid = (props) => {
                 <MainForm/>
             </Grid>
             <Grid item md={6} sm={12} className={classes.center}>
-                <Grid container className={classes.center} spacing={5} direction="column">
+                <Grid container className={classes.center} spacing={2} direction="column">
                     <Grid item xs={6} className={classes.center}>
                         <Verdict value={props.verdict}/>
                     </Grid>
-                    <Grid item xs={6} className={classes.center}>
+                    <Grid item xs={5} className={classes.center}>
                         <Progress
                             value={props.confidence}
                             minValue={0}
