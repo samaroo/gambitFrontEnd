@@ -1,7 +1,7 @@
 const verdictReducer = (state = "?", action) => {
     switch (action.type) {
         case 'SUCCESSFUL_API_RESPONSE':
-            return action.payload.verdict
+            return (action.payload.confidence > 0.5 ? "Yes" : "No")
         case 'UNSUCCESSFUL_API_RESPONSE':
             return "?"
         default:
